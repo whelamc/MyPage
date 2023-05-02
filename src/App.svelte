@@ -170,7 +170,7 @@
   }
   .right .image img {
     width: 100%;
-    min-height: 10vw;
+    min-height: 18vw;
     border: 4px solid #000;
   }
   .right .image::after {
@@ -220,6 +220,9 @@
     .right .image::after {
       left: 4px;
       top: 4px;
+    }
+    .right .image img {
+      min-height: 10vw;
     }
     .introduction,
     .contact,
