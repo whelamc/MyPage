@@ -1,4 +1,3 @@
-Okay, here is the converted text:
 
 # Introduction to Personal Homepage Project
 
