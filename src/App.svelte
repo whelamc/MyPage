@@ -163,7 +163,7 @@
   }
   .right .image {
     margin: 0 auto;
-    width: auto;
+    width: 20vw;
     height: auto;
     position: relative;
     z-index: 1;
