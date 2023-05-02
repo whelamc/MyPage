@@ -24,7 +24,7 @@
         A Web Developer based in NoWhere, loves jazz🎷, addicted to watching TV
         shows📺, enjoys Pour-over coffee☕, a big fan of Liverpool Football
         Club⚽, has a social phobia but is passionate about live music including
-        Livehouse and Music Festivals🔊, a romantic🫦, considers pets🐾 as
+        Livehouse and Music Festivals🔊, a romantic❤️, considers pets🐾 as
         friends and enjoys chill things.
       </p>
       <div class="contact">
@@ -188,9 +188,6 @@
     .container {
       width: 100%;
       padding: 0 20px;
-    }
-    .right .image {
-      width: 80%;
     }
   }
   @media (max-width: 768px) {
