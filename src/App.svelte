@@ -22,10 +22,10 @@
     <div class="left">
       <p class="introduction">
         A Web Developer based in NoWhere, loves jazz🎷, addicted to watching TV
-        shows📺, enjoys Pour-over coffee☕, a big fan of Liverpool Football
-        Club⚽, has a social phobia but is passionate about live music including
+        shows📺, enjoy Pour-over coffee☕, a big fan of Liverpool Football
+        Club⚽, have a social phobia but is passionate about live music including
         Livehouse and Music Festivals🔊, a romantic❤️, considers pets🐾 as
-        friends and enjoys chill things.
+        friends and enjoy chill things.
       </p>
       <div class="contact">
         <a
