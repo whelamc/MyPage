@@ -163,14 +163,14 @@
   }
   .right .image {
     margin: 0 auto;
-    width: 20vw;
+    width: auto;
     height: auto;
     position: relative;
     z-index: 1;
   }
   .right .image img {
     width: 100%;
-    min-height: 20vw;
+    min-height: 18vw;
     border: 4px solid #000;
   }
   .right .image::after {
