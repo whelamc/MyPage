@@ -5,7 +5,7 @@
   import SiLinkedin from "svelte-icons-pack/si/SiLinkedin";
   import SiGithub from "svelte-icons-pack/si/SiGithub";
 
-  const src = new URL('./assets/images/949BD2B7.png', import.meta.url).href
+  const src = new URL("./assets/images/949BD2B7.png", import.meta.url).href;
 </script>
 
 <header>
@@ -170,7 +170,7 @@
   }
   .right .image img {
     width: 100%;
-    min-height: 18vw;
+    min-height: 10vw;
     border: 4px solid #000;
   }
   .right .image::after {
@@ -209,6 +209,7 @@
     }
     .right {
       order: 1;
+      padding: 1vh 0;
     }
     .slide {
       font-size: 50px;
@@ -219,6 +220,11 @@
     .right .image::after {
       left: 4px;
       top: 4px;
+    }
+    .introduction,
+    .contact,
+    .btn-group {
+      margin-bottom: 1vh;
     }
   }
 
