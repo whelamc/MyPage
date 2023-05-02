@@ -1,0 +1,86 @@
+/*Reset CSS*/
+html, body, 
+h1, h2, h3, h4, h5, h6, p, 
+blockquote, pre, 
+dl, dd, ol, ul, 
+figure, 
+fieldset, legend,
+textarea, 
+table, th, td, caption,
+input, button, select, option,
+img {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: inherit;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*Reset CSS*/
+
+:root {
+  font-family: Arial, sans-serif;
+}
+
+body,html {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  width: 100%;
+  overflow: hidden;
+  background-color: #90ee90;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Lexend Mega';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/LexendMega-Regular.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: 'Lexend Mega Thin';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/LexendMega-Thin.ttf') format('truetype')
+}
+
