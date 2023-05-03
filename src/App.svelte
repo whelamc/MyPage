@@ -233,10 +233,10 @@
       margin-bottom: 1vh;
     }
     .introduction,.btn-group button{
-      font-size: 12px;
+      font-size: 14px;
     }
     .contact a {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 
