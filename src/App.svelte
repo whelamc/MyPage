@@ -23,9 +23,9 @@
       <p class="introduction">
         A Web Developer based in NoWhere, loves jazz🎷, addicted to watching TV
         shows📺, enjoy Pour-over coffee☕, a big fan of Liverpool Football
-        Club⚽, have a social phobia but is passionate about live music including
-        Livehouse and Music Festivals🔊, a romantic❤️, considers pets🐾 as
-        friends and enjoy chill things.
+        Club⚽, have a social phobia but is passionate about live music
+        including Livehouse and Music Festivals🔊, a romantic❤️, considers
+        pets🐾 as friends and enjoy chill things.
       </p>
       <div class="contact">
         <a
@@ -101,7 +101,7 @@
   }
   .container {
     max-width: 1400px;
-    width: 100%;
+    width: calc(100% - 100px);
     margin: 0 auto;
     height: 100%;
     clear: both;
@@ -161,9 +161,12 @@
   .btn-group button span {
     vertical-align: middle;
   }
+  .right {
+    padding: 20px;
+  }
   .right .image {
     margin: 0 auto;
-    width: 50%;
+    width: 350px;
     height: auto;
     position: relative;
     z-index: 1;
@@ -186,8 +189,10 @@
   }
   @media (max-width: 1400px) {
     .container {
-      width: 100%;
-      padding: 0 20px;
+      width: calc(100% - 100px);
+    }
+    .right .image {
+      max-width: 100%;
     }
   }
   @media (max-width: 768px) {
@@ -196,6 +201,7 @@
       padding: 0 20px;
       display: flex;
       flex-wrap: wrap;
+      align-items: flex-start;
     }
     .left,
     .right {
@@ -206,13 +212,13 @@
     }
     .right {
       order: 1;
-      padding: 1vh 0;
+      padding: 2vh 0;
     }
     .slide {
       font-size: 50px;
     }
     .right .image {
-      width: 50%;
+      width: 60%;
     }
     .right .image::after {
       left: 4px;
@@ -225,6 +231,12 @@
     .contact,
     .btn-group {
       margin-bottom: 1vh;
+    }
+    .introduction,.btn-group button{
+      font-size: 12px;
+    }
+    .contact a {
+      font-size: 14px;
     }
   }
 
