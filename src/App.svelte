@@ -6,26 +6,33 @@
   import SiGithub from "svelte-icons-pack/si/SiGithub";
 
   const src = new URL("./assets/images/949BD2B7.png", import.meta.url).href;
+  const slideContent = "Whelam Choi";
+  const introduction = `A Web Developer based in NoWhere, loves Jazz🎷, addicted to watching TV
+        shows📺, enjoy Pour-over coffee☕, a big fan of Liverpool Football
+        Club⚽, have a social phobia but is passionate about live music
+        including Livehouse and Music Festivals🔊, a romantic❤️, considers
+        pets🐾 as friends and enjoy chill things.`;
 </script>
 
 <header>
-  <div class="slide">
-    <p>
-      Whelam Choi Whelam Choi Whelam Choi Whelam Choi Whelam Choi Whelam Choi
-      Whelam Choi Whelam Choi Whelam Choi Whelam Choi Whelam Choi Whelam Choi
-      Whelam Choi Whelam Choi Whelam Choi Whelam Choi
-    </p>
+  <div class="marquee">
+    <div class="marquee-content">
+      <span>{slideContent}</span>
+      <span>{slideContent}</span>
+      <span>{slideContent}</span>
+    </div>
+    <div class="marquee-content" aria-hidden="true">
+      <span>{slideContent}</span>
+      <span>{slideContent}</span>
+      <span>{slideContent}</span>
+    </div>
   </div>
 </header>
 <section>
   <div class="container">
     <div class="left">
       <p class="introduction">
-        A Web Developer based in NoWhere, loves jazz🎷, addicted to watching TV
-        shows📺, enjoy Pour-over coffee☕, a big fan of Liverpool Football
-        Club⚽, have a social phobia but is passionate about live music
-        including Livehouse and Music Festivals🔊, a romantic❤️, considers
-        pets🐾 as friends and enjoy chill things.
+        {introduction}
       </p>
       <div class="contact">
         <a
@@ -66,16 +73,26 @@
   </div>
 </section>
 <footer>
-  <div class="slide">
-    <p>
-      Whelam Choi Whelam Choi Whelam Choi Whelam Choi Whelam Choi Whelam Choi
-      Whelam Choi Whelam Choi Whelam Choi Whelam Choi Whelam Choi Whelam Choi
-      Whelam Choi Whelam Choi Whelam Choi Whelam Choi
-    </p>
+  <div class="marquee">
+    <div class="marquee-content">
+      <span>{slideContent}</span>
+      <span>{slideContent}</span>
+      <span>{slideContent}</span>
+    </div>
+    <div class="marquee-content" aria-hidden="true">
+      <span>{slideContent}</span>
+      <span>{slideContent}</span>
+      <span>{slideContent}</span>
+    </div>
   </div>
 </footer>
 
 <style>
+  :root {
+    --size: clamp(10rem, 1rem + 40vmin, 30rem);
+    --gap: calc(var(--size) / 14);
+    --duration: 30s;
+  }
   header,
   footer {
     width: 100%;
@@ -89,12 +106,24 @@
   footer {
     border-top: 4px solid #000;
   }
-  .slide {
+  .marquee {
     width: 100%;
     height: 100%;
     white-space: nowrap;
-    animation: slide 10s linear infinite;
     font-size: 5rem;
+    overflow: hidden;
+    display: flex;
+    user-select: none;
+    gap: var(--gap);
+  }
+  .marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+    animation: marquee var(--duration) linear infinite;
   }
   section {
     flex: 1;
@@ -232,7 +261,8 @@
     .btn-group {
       margin-bottom: 1vh;
     }
-    .introduction,.btn-group button{
+    .introduction,
+    .btn-group button {
       font-size: 14px;
     }
     .contact a {
@@ -240,7 +270,7 @@
     }
   }
 
-  @keyframes slide {
+  @keyframes marquee {
     0% {
       transform: translateX(0);
     }
