@@ -39,7 +39,7 @@
           href="https://buttered-feather-1ca.notion.site/Notes-Journal-15dc7960d65047ddb0e58e058c5c2951"
           >Know My Life</a
         >
-        <a href="mailto:whelamc@gmail.com">Contact Me</a>
+        <a href="mailto:i@whelam.com">Contact Me</a>
       </div>
       <div class="btn-group">
         <button
