@@ -1,11 +1,11 @@
 /*Reset CSS*/
-html, body, 
-h1, h2, h3, h4, h5, h6, p, 
-blockquote, pre, 
-dl, dd, ol, ul, 
-figure, 
+html, body,
+h1, h2, h3, h4, h5, h6, p,
+blockquote, pre,
+dl, dd, ol, ul,
+figure,
 fieldset, legend,
-textarea, 
+textarea,
 table, th, td, caption,
 input, button, select, option,
 img {
@@ -19,7 +19,7 @@ img {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -63,7 +63,7 @@ body,html {
   background-color: #90ee90;
   display: flex;
   flex-direction: column;
-  height: 100vh; 
+  height: 100vh;
 }
 
 * {

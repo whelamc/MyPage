@@ -10,10 +10,14 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
+    "@notionhq/client": "^2.2.13",
     "@sveltejs/vite-plugin-svelte": "^2.0.3",
     "@tsconfig/svelte": "^4.0.1",
+    "@types/node": "^20.8.0",
+    "sass": "^1.68.0",
     "svelte": "^3.57.0",
     "svelte-check": "^2.10.3",
+    "svelte-spa-router": "^3.3.0",
     "tslib": "^2.5.0",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
