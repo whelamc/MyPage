@@ -24,7 +24,7 @@
     <!-- todo -->
       <!-- <a use:link href="/journal">Know My Life</a>
       <a use:link href="/watching">Im Watching</a> -->
-      <a href="/https://www.notion.so/Notes-Journal-15dc7960d65047ddb0e58e058c5c2951?pvs=4">Know My Life</a>
+      <a href="https://www.notion.so/Notes-Journal-15dc7960d65047ddb0e58e058c5c2951?pvs=4">Know My Life</a>
       <a href="mailto:i@whelam.com">Contact Me</a>
     </div>
     <div class="btn-group">
