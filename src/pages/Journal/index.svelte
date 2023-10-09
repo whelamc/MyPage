@@ -1,7 +1,25 @@
 <script lang="ts">
-  import getPost from "@/lib/api";
+  import { onMount } from "svelte";
+  import Icon from "svelte-icons-pack/Icon.svelte";
+  import AiFillHeart from "svelte-icons-pack/ai/AiFillHeart";
+  import ImHeadphones from "svelte-icons-pack/im/ImHeadphones";
+  import API from "@/lib/api";
 
-  getPost();
+  // let data = {
+  //   rate: "0bpm",
+  //   song: "..."
+  // }
+  const getInfo = async () => {
+    try {
+      const response = await API.get("/getInfo");
+      return response.results;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  onMount(async () => {
+    await getInfo()
+  });
 </script>
 
 <div class="journal">
@@ -83,6 +101,22 @@
         d="M21.255-.002l2.88 6.9 8.412 1.335.664 12.458-4.427 17.8-2.878-.22 2.8-11.847-2.99-.084-4.676 12.6-3.544-.446 4.4-12.736-3.072-.584-5.978 13.543-4.428-.445 6.088-14.1-2.1-1.25-7.528 12.012-3.764-.445L12.4 12.9l-1.107-1.78L.665 15.57 0 13.124l8.635-7.786zm162.49 0l-2.88 6.9-8.412 1.335-.664 12.458 4.427 17.8 2.878-.22-2.8-11.847 2.99-.084 4.676 12.6 3.544-.446-4.4-12.736 3.072-.584 5.978 13.543 4.428-.445-6.088-14.1 2.1-1.25 7.528 12.012 3.764-.445L192.6 12.9l1.107-1.78 10.628 4.45.665-2.447-8.635-7.786z"
       /></svg
     >
+    <div class="daily-mood">
+      <a
+        href="https://www.notion.so/Notes-Journal-15dc7960d65047ddb0e58e058c5c2951?pvs=4"
+        >Daily Mood</a
+      >
+    </div>
+    <div class="listening">
+      <Icon src={ImHeadphones} />
+      <span>listening</span>
+    </div>
+    <div class="listening-link" />
+    <div class="heart-rate">
+      <Icon src={AiFillHeart} />
+      <span>heart-rate</span>
+    </div>
+    <div class="heart-rate-link" />
   </div>
 </div>
 
@@ -90,12 +124,14 @@
   .journal {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .human-body {
     position: relative;
-    height: auto;
-    width: auto;
-    margin: 10vh auto;
+    margin: 0 auto;
+    min-height: 540px;
     svg:hover {
       cursor: pointer;
     }
@@ -103,38 +139,100 @@
       fill: #bafca2;
     }
     svg {
-      position: absolute;
-      left: 50%;
       fill: black;
+      height: 100%;
+      display: block;
+      margin: 0 auto;
     }
     svg.head {
-      margin-left: -28.5px;
-      top: -6px;
+      margin-top: 0px;
     }
     svg.shoulder {
-      margin-left: -53.5px;
-      top: 69px;
+      margin-top: -20px;
     }
     svg.arm {
-      margin-left: -78px;
-      top: 112px;
+      margin-top: -5px;
     }
     svg.cheast {
-      margin-left: -43.5px;
-      top: 88px;
+      margin-top: -140px;
     }
     svg.stomach {
-      margin-left: -37.5px;
-      top: 130px;
+      margin-top: -5px;
     }
     svg.legs {
-      margin-left: -46.5px;
-      top: 205px;
-      z-index: 9999;
+      margin-top: -32px;
     }
     svg.hands {
-      margin-left: -102.5px;
-      top: 224px;
+      margin-top: -270px;
+    }
+    .daily-mood {
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      a {
+        font-size: 1.2rem;
+        padding: 4px 0;
+        margin-right: 8px;
+        color: #000;
+        font-style: italic;
+        padding-bottom: 1px;
+        font-weight: bold;
+        border-bottom: 1px solid#000;
+      }
+    }
+
+    .listening {
+      border-radius: 5px;
+      border: 2px solid #000;
+      padding: 4px;
+      border-bottom: 4px solid #000;
+      border-right: 4px solid #000;
+      position: absolute;
+      left: 150px;
+      top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 250px;
+      overflow: hidden;
+      gap: 4px;
+    }
+    .listening-link {
+      width: 30px;
+      height: 1px;
+      position: absolute;
+      background-color: #000;
+      transform: rotate(125deg);
+      top: 25px;
+      right: 50px;
+    }
+    .heart-rate {
+      border-radius: 5px;
+      border: 2px solid #000;
+      padding: 4px;
+      position: relative;
+      border-bottom: 4px solid #000;
+      border-right: 4px solid #000;
+      position: absolute;
+      right: -90px;
+      top: 60px;
+      max-width: 250px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+    }
+    .heart-rate-link {
+      width: 30px;
+      height: 1px;
+      position: absolute;
+      background-color: #000;
+      transform: rotate(155deg);
+      top: 95px;
+      right: 15px;
     }
   }
 </style>

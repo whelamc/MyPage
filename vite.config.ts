@@ -20,14 +20,11 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      "/v1/pages": {
-        target: 'https://api.notion.com/v1/pages',
+      "/api": {
+        target: "https://mypage-api.whelamc.workers.dev/",
         changeOrigin: true,
-        secure: false,
-        headers: {
-          Referer: 'https://api.notion.com/'
-        }
-      }
-    }
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
   },
 });
