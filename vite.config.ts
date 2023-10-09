@@ -21,9 +21,9 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://mypage-api.whelamc.workers.dev/",
+        target: "https://mypage-api.whelamc.workers.dev",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
+        rewrite: (path) => path.replace(/^\/api/, "")
       },
     },
   },

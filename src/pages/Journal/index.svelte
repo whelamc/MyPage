@@ -5,20 +5,17 @@
   import ImHeadphones from "svelte-icons-pack/im/ImHeadphones";
   import API from "@/lib/api";
 
-  // let data = {
-  //   rate: "0bpm",
-  //   song: "..."
-  // }
   const getInfo = async () => {
     try {
-      const response = await API.get("/getInfo");
-      return response.results;
+      const response = await API.get("/");
+      console.log(response.json())
+      return response.json();
     } catch (error) {
       console.error(error);
     }
   }
   onMount(async () => {
-    //await getInfo()
+    await getInfo()
   });
 </script>
 
