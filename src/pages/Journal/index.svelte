@@ -18,7 +18,7 @@
     }
   }
   onMount(async () => {
-    await getInfo()
+    //await getInfo()
   });
 </script>
 
