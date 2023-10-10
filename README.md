@@ -1,9 +1,11 @@
-
+<div style="text-align: center">
+<img src="/public/capture.png"/>
+</div>
 # Introduction to Personal Homepage Project
 
 This project is a personal homepage based on the minimalist and neo brutalism style, developed using the latest Vite 4.3 bundling tool and Svelte 3.57 framework, and TypeScript language.
 
-The goal of this personal homepage is to showcase my abilities and works, and provide more information about me for interested people. The entire website presents a simple and clear style, and the website colors and layout style is in neo brutalism，making the whole page more outstanding.
+The goal of this personal homepage is to showcase my abilities and works, and provide more information about me for interested people. The entire website presents a simple and clear style, and the website colors and layout style is in neo brutalism, making the whole page more outstanding.
 
 ## Tech Stack
 
@@ -16,6 +18,16 @@ Below is the main tech stack used in this project:
 - CSS3
 
 Leveraged the latest web technologies with a lot of ES6+ syntax, ensuring the website has high compatibility and scalability.
+
+## Serverless And Code Repo
+
+Below is the main serverless used in this project:
+
+- Cloudflare Worker
+- Cloudflare Pages
+- Github
+- iOS Shortcut
+
 
 ## Key Features
 
