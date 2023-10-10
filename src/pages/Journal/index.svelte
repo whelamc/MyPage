@@ -110,7 +110,7 @@
     </div>
     <div class="listening">
       <Icon src={ImHeadphones} />
-      <span>{song}</span>
+      <span class="song">{song}</span>
     </div>
     <div class="listening-link" />
     <div class="heart-rate">
@@ -199,6 +199,10 @@
       max-width: 250px;
       overflow: hidden;
       gap: 4px;
+      .song {
+        text-align: center;
+        white-space:nowrap;
+      }
     }
     .listening-link {
       width: 30px;
