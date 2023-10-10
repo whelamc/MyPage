@@ -10,9 +10,6 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@haverstack/axios-fetch-adapter": "0.8.0",
-    "@notionhq/client": "^2.2.13",
-    "@sveltejs/adapter-cloudflare": "2.3.3",
     "@sveltejs/vite-plugin-svelte": "^2.0.3",
     "@tsconfig/svelte": "^4.0.1",
     "@types/node": "^20.8.0",
