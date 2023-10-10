@@ -8,6 +8,7 @@ const axiosAPI = axios.create({
 // implement a method to execute all the request from here.
 const apiRequest = (method: string, url: any, request: any) => {
   const headers = {
+    "Access-Control-Allow-Origin": "*"
   };
   //using the axios instance to perform the request that received from each http method
   return axiosAPI({
