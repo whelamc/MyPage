@@ -1,7 +1,6 @@
 <div style="text-align: center">
 <img src="/public/capture.png"/>
 </div>
-___
 
 # Introduction to Personal Homepage Project
 
