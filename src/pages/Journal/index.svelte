@@ -10,7 +10,7 @@
 
   const getInfo = async () => {
     try {
-      const response = await API.get("/");
+      const response = await API.get();
       rate = response.rate
       song = response.song
     } catch (error) {

@@ -25,13 +25,13 @@ const apiRequest = (method: string, url: any, request: any) => {
 };
 
 // function to execute the http get request
-const get = (url: any, request?: any) => apiRequest("get", url, request);
+const get = (url?: any, request?: any) => apiRequest("get", url, request);
 
 // function to execute the http delete request
 const deleteRequest = (url: any, request: any) => apiRequest("delete", url, request);
 
 // function to execute the http post request
-const post = (url: any, request?: any) => apiRequest("post", url, request);
+const post = (url?: any, request?: any) => apiRequest("post", url, request);
 
 // function to execute the http put request
 const put = (url: any, request: any) => apiRequest("put", url, request);
