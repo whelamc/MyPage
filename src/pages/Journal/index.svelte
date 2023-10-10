@@ -187,7 +187,7 @@
     .listening {
       border-radius: 5px;
       border: 2px solid #000;
-      padding: 4px;
+      padding: 4px 8px;
       border-bottom: 4px solid #000;
       border-right: 4px solid #000;
       position: absolute;
@@ -216,7 +216,7 @@
     .heart-rate {
       border-radius: 5px;
       border: 2px solid #000;
-      padding: 4px;
+      padding: 4px 8px;
       position: relative;
       border-bottom: 4px solid #000;
       border-right: 4px solid #000;
