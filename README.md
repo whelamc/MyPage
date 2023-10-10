@@ -1,6 +1,8 @@
 <div style="text-align: center">
 <img src="/public/capture.png"/>
 </div>
+___
+
 # Introduction to Personal Homepage Project
 
 This project is a personal homepage based on the minimalist and neo brutalism style, developed using the latest Vite 4.3 bundling tool and Svelte 3.57 framework, and TypeScript language.
