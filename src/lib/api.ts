@@ -12,7 +12,7 @@ const apiRequest = (method: string, url: any, request: any) => {
   //using the axios instance to perform the request that received from each http method
   return axiosAPI({
     method,
-    url,
+    url: "/",
     data: request,
     headers,
   })
