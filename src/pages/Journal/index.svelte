@@ -5,15 +5,19 @@
   import ImHeadphones from "svelte-icons-pack/im/ImHeadphones";
   import API from "@/lib/api";
 
+  let rate = "0"
+  let song = "..."
+
   const getInfo = async () => {
     try {
       const response = await API.get("/");
-      console.log(response.json())
-      return response.json();
+      rate = response.rate
+      song = response.song
     } catch (error) {
       console.error(error);
     }
   }
+
   onMount(async () => {
     await getInfo()
   });
@@ -106,12 +110,12 @@
     </div>
     <div class="listening">
       <Icon src={ImHeadphones} />
-      <span>listening</span>
+      <span>{song}</span>
     </div>
     <div class="listening-link" />
     <div class="heart-rate">
       <Icon src={AiFillHeart} />
-      <span>heart-rate</span>
+      <span>{rate}bpm</span>
     </div>
     <div class="heart-rate-link" />
   </div>
@@ -213,9 +217,10 @@
       border-bottom: 4px solid #000;
       border-right: 4px solid #000;
       position: absolute;
-      right: -90px;
+      left: 190px;
       top: 60px;
       max-width: 250px;
+      height: 30px;
       overflow: hidden;
       display: flex;
       justify-content: center;

@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@haverstack/axios-fetch-adapter': 0.8.0
   '@notionhq/client': ^2.2.13
   '@sveltejs/adapter-cloudflare': 2.3.3
   '@sveltejs/vite-plugin-svelte': ^2.0.3
@@ -20,6 +21,7 @@ dependencies:
   svelte-icons-pack: 2.1.0
 
 devDependencies:
+  '@haverstack/axios-fetch-adapter': 0.8.0_axios@1.5.1
   '@notionhq/client': 2.2.13
   '@sveltejs/adapter-cloudflare': 2.3.3
   '@sveltejs/vite-plugin-svelte': 2.1.1_svelte@3.58.0+vite@4.3.3
@@ -435,6 +437,14 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@haverstack/axios-fetch-adapter/0.8.0_axios@1.5.1:
+    resolution: {integrity: sha512-49/VcEVNusdkpaejbBx0EyESK2YR4L2oWfANp2FwYxJcE8gIfK86rcRhBt5RcGtZpTcfEwpflqyrT2S6yZnPDw==}
+    peerDependencies:
+      axios: ^0.21.1
+    dependencies:
+      axios: 1.5.1
+    dev: true
 
   /@jridgewell/resolve-uri/3.1.0:
     resolution: {integrity: sha512-F2msla3tad+Mfht5cJq7LSXcdudKTWCVYUgw6pLFOOHSTtZlj6SWNYAp+AhuqLmWdBO2X5hPrLcu8cVP8fy28w==}

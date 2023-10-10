@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create a instance of axios to use the same base url.
 const axiosAPI = axios.create({
-  baseURL: "https://mypage-api.whelamc.workers.dev/", // it's not recommended to have this info here.
+  baseURL: import.meta.env.VITE_PUBLIC_API_UTL, // it's not recommended to have this info here.
 });
 
 // implement a method to execute all the request from here.
