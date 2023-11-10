@@ -1,0 +1,22 @@
+name: Close Previous Issue
+
+on:
+  repository_dispatch:
+    types:
+      - close_previous_issue
+
+jobs:
+  close-previous-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Previous Issue
+        id: check_previous_issue
+        run: |
+          previous_issue_number=$(gh issue list --state open --limit 1 --format json | jq -r '.[0].number')
+          echo "::set-output name=previous_issue::$previous_issue_number"
+
+      - name: Close Previous Issue
+        if: steps.check_previous_issue.outputs.previous_issue != 'null'
+        run: |
+          gh issue close ${{ steps.check_previous_issue.outputs.previous_issue }}
