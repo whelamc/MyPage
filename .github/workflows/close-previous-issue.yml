@@ -28,9 +28,7 @@ jobs:
               curl -X PATCH -H "Authorization: Bearer ${{ secrets.iOS_TOKEN }}" \
                 -H "Content-Type: application/json" \
                 -d '{"body":"Good to hear"}' \
-                https://api.github.com/repos/${{ github.repository }}/issues/$issue/comments \
-
-              then
+                https://api.github.com/repos/${{ github.repository }}/issues/$issue/comments
 
               curl -X PATCH -H "Authorization: Bearer ${{ secrets.iOS_TOKEN }}" \
                 -H "Content-Type: application/json" \
