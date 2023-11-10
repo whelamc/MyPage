@@ -14,18 +14,17 @@ jobs:
 
       - name: Close Previous Issue
         run: |
-          # 获取当前仓库的所有已关闭的 issue
-          closed_issues=$(curl -s -H "Authorization: Bearer ${{ secrets.iOS_TOKEN }}" \
-            "https://api.github.com/repos/${{ github.repository }}/issues?state=closed" | jq -r '.[].number')
+          # 获取当前仓库的所有未关闭的 issue
+          all_issues=$(curl -s -H "Authorization: Bearer ${{ secrets.iOS_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/issues?state=open" | jq -r '.[].number')
 
           # 获取最新创建的 issue
           newest_issue=$(curl -s -H "Authorization: Bearer ${{ secrets.iOS_TOKEN }}" \
             "https://api.github.com/repos/${{ github.repository }}/issues?state=open" | jq -r '.[0].number')
 
           # 关闭上一个 issue
-          for issue in $closed_issues; do
+          for issue in $all_issues; do
             if [[ $issue -ne $newest_issue ]]; then
-              echo "$issue"
               curl -X PATCH -H "Authorization: Bearer ${{ secrets.iOS_TOKEN }}" \
                 -H "Content-Type: application/json" \
                 -d '{"state": "closed"}' \
