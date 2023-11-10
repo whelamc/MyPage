@@ -27,7 +27,7 @@ jobs:
             if [[ $issue -ne $newest_issue ]]; then
               curl -X PATCH -H "Authorization: Bearer ${{ secrets.iOS_TOKEN }}" \
                 -H "Content-Type: application/json" \
-                -d '{"state": "closed"}' \
+                -d '{"title":"Auto Close","body":"Good to hear","state": "closed"}' \
                 "https://api.github.com/repos/${{ github.repository }}/issues/$issue"
             fi
           done
