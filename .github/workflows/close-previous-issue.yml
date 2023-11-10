@@ -25,6 +25,7 @@ jobs:
           # 关闭上一个 issue
           for issue in $closed_issues; do
             if [[ $issue -ne $newest_issue ]]; then
+              echo "$issue"
               curl -X PATCH -H "Authorization: Bearer ${{ secrets.iOS_TOKEN }}" \
                 -H "Content-Type: application/json" \
                 -d '{"state": "closed"}' \
