@@ -193,15 +193,12 @@
       position: absolute;
       left: 150px;
       top: -20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 250px;
+      width: 200px;
       overflow: hidden;
       gap: 4px;
+      word-wrap: break-word;
+      height: auto;
       .song {
-        text-align: center;
-        white-space:nowrap;
       }
     }
     .listening-link {
