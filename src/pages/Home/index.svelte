@@ -12,7 +12,7 @@
           shows📺, enjoy Pour-over coffee☕, a big fan of Liverpool Football
           Club⚽, have a social phobia but is passionate about live music
           including Livehouse and Music Festivals🔊, a romantic❤️, considers
-          pets🐾 as friends and enjoy chill things.`;
+          pets🐾 as friends and enjoy chill stuff.`;
 </script>
 
 <div class="container">
