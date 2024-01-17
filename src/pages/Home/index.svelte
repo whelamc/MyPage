@@ -80,6 +80,7 @@
       width: 100%;
       margin-bottom: 2vh;
       line-height: 1.5;
+      color: #000;
     }
     .introduction {
       font-weight: bold;
