@@ -1,25 +1,25 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import Icon from "svelte-icons-pack/Icon.svelte";
-  import AiFillHeart from "svelte-icons-pack/ai/AiFillHeart";
-  import ImHeadphones from "svelte-icons-pack/im/ImHeadphones";
-  import API from "@/lib/api";
+  import { onMount } from 'svelte';
+  import { Icon } from 'svelte-icons-pack';
+  import { AiFillHeart } from 'svelte-icons-pack/ai';
+  import { ImHeadphones } from 'svelte-icons-pack/im';
+  import API from '@/lib/api';
 
-  let rate = "0"
-  let song = "..."
+  let rate = '0';
+  let song = '...';
 
   const getInfo = async () => {
     try {
       const response = await API.get();
-      rate = response.rate
-      song = response.song
+      rate = response.rate;
+      song = response.song;
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   onMount(async () => {
-    await getInfo()
+    await getInfo();
   });
 </script>
 
@@ -128,6 +128,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
   }
   .human-body {
     position: relative;
@@ -192,14 +193,12 @@
       border-right: 4px solid #000;
       position: absolute;
       left: 150px;
-      top: -20px;
+      top: -10px;
       width: 200px;
       overflow: hidden;
       gap: 4px;
       word-wrap: break-word;
       height: auto;
-      .song {
-      }
     }
     .listening-link {
       width: 30px;
@@ -207,7 +206,7 @@
       position: absolute;
       background-color: #000;
       transform: rotate(125deg);
-      top: 25px;
+      top: 35px;
       right: 50px;
     }
     .heart-rate {

@@ -21,7 +21,8 @@
     width: 100%;
     text-transform: uppercase;
     font-family: "Lexend Mega", Arial, sans-serif;
-    padding: 0.5vh 0;
+    height: 5rem;
+    padding: 5px 0;
   }
   header {
     border-bottom: 4px solid #000;
@@ -31,5 +32,6 @@
   }
   section {
     flex: 1;
+    overflow-y: auto;
   }
 </style>

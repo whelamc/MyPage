@@ -1,13 +1,18 @@
 <script lang="ts">
-  import Icon from "svelte-icons-pack/Icon.svelte";
-  import SiFacebook from "svelte-icons-pack/si/SiFacebook";
-  import SiInstagram from "svelte-icons-pack/si/SiInstagram";
-  import SiLinkedin from "svelte-icons-pack/si/SiLinkedin";
-  import SiGithub from "svelte-icons-pack/si/SiGithub";
+  import { Icon } from 'svelte-icons-pack';
+  import {
+    SiFacebook,
+    SiInstagram,
+    SiLinkedin,
+    SiGithub
+  } from 'svelte-icons-pack/si';
+  import { SlArrowDownCircle } from 'svelte-icons-pack/sl';
 
-  import { link } from "svelte-spa-router";
+  import JournalSection from '@/components/JournalSection.svelte';
+  import PerfumeSection from '@/components/PerfumeSection.svelte';
+  import ToolsSection from '@/components/ToolsSection.svelte';
 
-  const src = new URL("@/assets/images/949BD2B7.png", import.meta.url).href;
+  const src = new URL('@/assets/images/949BD2B7.png', import.meta.url).href;
   const introduction = `A Web Developer based in NoWhere, loves Jazz🎷, addicted to watching TV
           shows📺, enjoy Pour-over coffee☕, a big fan of Liverpool Football
           Club⚽, have a social phobia but is passionate about live music
@@ -20,31 +25,25 @@
     <p class="introduction">
       {introduction}
     </p>
-    <div class="contact">
-    <!-- todo -->
-      <a use:link href="/journal">Know My Life</a>
-      <!--<a use:link href="/watching">Im Watching</a> -->
-      <a href="mailto:i@whelam.com">Contact Me</a>
-    </div>
     <div class="btn-group">
       <button
-        on:click={() => window.open("https://www.facebook.com/guangdouzi/")}
+        on:click={() => window.open('https://www.facebook.com/guangdouzi/')}
         ><Icon src={SiFacebook} className="custom-icon" /><span
           >@WhelamChoi</span
         ></button
       >
       <button
-        on:click={() => window.open("https://www.instagram.com/whelamchoi/")}
+        on:click={() => window.open('https://www.instagram.com/whelamchoi/')}
         ><Icon src={SiInstagram} className="custom-icon" /><span
           >@whelamchoi</span
         ></button
       >
       <button
-        on:click={() => window.open("https://www.linkedin.com/in/whelamc/")}
+        on:click={() => window.open('https://www.linkedin.com/in/whelamc/')}
         ><Icon src={SiLinkedin} className="custom-icon" /><span>@Whelam</span
         ></button
       >
-      <button on:click={() => window.open("https://github.com/whelamc")}
+      <button on:click={() => window.open('https://github.com/whelamc')}
         ><Icon src={SiGithub} className="custom-icon" /><span>@whelamc</span
         ></button
       >
@@ -55,7 +54,13 @@
       <img {src} alt="avatar" />
     </div>
   </div>
+  <div class="go-down-btn">
+    <Icon src={SlArrowDownCircle} className="down-icon" />
+  </div>
 </div>
+<div class="section-even"><PerfumeSection></PerfumeSection></div>
+<div class="section-odd"><ToolsSection></ToolsSection></div>
+<div class="section-even"><JournalSection></JournalSection></div>
 
 <style lang="scss">
   .container {
@@ -65,6 +70,7 @@
     height: 100%;
     clear: both;
     display: flex;
+    position: relative;
     padding: 1.5vh 0;
     .left,
     .right {
@@ -75,7 +81,6 @@
       flex-direction: column;
     }
     .introduction,
-    .contact,
     .btn-group {
       width: 100%;
       margin-bottom: 2vh;
@@ -84,31 +89,21 @@
     }
     .introduction {
       font-weight: bold;
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
         sans-serif;
       font-size: 1rem;
-    }
-    .contact a {
-      font-size: 1.2rem;
-      padding: 4px 0;
-      margin-right: 8px;
-      color: #000;
-      font-style: italic;
-      padding-bottom: 1px;
-      font-weight: bold;
-      border-bottom: 1px solid#000;
     }
     .btn-group button {
       border-radius: 5px;
       border: 2px solid #000;
-      padding: 4px 8px;
+      padding: 2px 4px;
       cursor: pointer;
       position: relative;
       border-bottom: 4px solid #000;
       border-right: 4px solid #000;
       margin-right: 4px;
       margin-bottom: 4px;
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
     .btn-group button:hover {
       background-color: #bafca2;
@@ -136,7 +131,7 @@
       border: 4px solid #000;
     }
     .right .image::after {
-      content: "";
+      content: '';
       border: 4px solid #000;
       background-color: #faf2ee;
       position: absolute;
@@ -146,6 +141,36 @@
       top: 1.2vw;
       z-index: -1;
     }
+    .go-down-btn {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 1rem;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 3rem;
+      animation: bounce 1s infinite;
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(-25%);
+          animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+        50% {
+          transform: translateY(0);
+          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+      }
+    }
+  }
+
+  .section-even {
+    background-color: #77dd77;
+    padding: 1rem 0;
+  }
+  .section-odd {
+    background-color: transparent;
+    padding: 1rem 0;
   }
 
   @media (max-width: 1400px) {
@@ -185,16 +210,12 @@
         min-height: 10vw;
       }
       .introduction,
-      .contact,
       .btn-group {
         margin-bottom: 1vh;
       }
       .introduction,
       .btn-group button {
         font-size: 14px;
-      }
-      .contact a {
-        font-size: 16px;
       }
     }
   }
