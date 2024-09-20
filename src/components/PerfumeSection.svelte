@@ -24,9 +24,9 @@
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 1rem;
+    gap: 10px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 5px;
     min-height: 80vh;
     .left,
     .right {
@@ -66,6 +66,30 @@
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
         sans-serif;
       font-size: 1rem;
+    }
+  }
+  @media (max-width: 1400px) {
+    .perfume {
+      flex-direction: column;
+      width: calc(100% - 10px);
+      .left {
+        width: 100%;
+      }
+      .right {
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .perfume {
+      flex-direction: column;
+      width: calc(100% - 10px);
+      .left {
+        width: 100%;
+      }
+      .right {
+        width: 100%;
+      }
     }
   }
 </style>

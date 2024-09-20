@@ -114,6 +114,7 @@
     }
     .btn-group button span {
       vertical-align: middle;
+      user-select: none;
     }
     .right {
       padding: 20px;
@@ -145,10 +146,10 @@
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 1rem;
+      bottom: 10px;
       margin: 0 auto;
       text-align: center;
-      font-size: 3rem;
+      font-size: 42px;
       animation: bounce 1s infinite;
       @keyframes bounce {
         0%,
@@ -216,6 +217,9 @@
       .introduction,
       .btn-group button {
         font-size: 14px;
+      }
+      .go-down-btn {
+        font-size: 32px;
       }
     }
   }

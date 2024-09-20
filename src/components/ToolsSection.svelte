@@ -69,4 +69,29 @@
       font-size: 1rem;
     }
   }
+
+  @media (max-width: 1400px) {
+    .tools {
+      flex-direction: column;
+      width: calc(100% - 10px);
+      .left {
+        width: 100%;
+      }
+      .right {
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .tools {
+      flex-direction: column;
+      width: calc(100% - 10px);
+      .left {
+        width: 100%;
+      }
+      .right {
+        width: 100%;
+      }
+    }
+  }
 </style>
