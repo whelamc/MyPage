@@ -19,6 +19,8 @@ export default defineConfig({
     assetsInlineLimit: 4096,
   },
   server: {
+    port: 4444,
+    strictPort: true,
     proxy: {
       "/api": {
         target: "https://mypage-api.whelam.com/",

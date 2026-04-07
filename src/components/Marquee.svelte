@@ -1,16 +1,24 @@
 <script lang="ts">
+  export let mqcontent: string;
+  export let reverse = false;
+  export let repeat = 6;
+  export let duration = "24s";
+
+  $: items = Array.from({ length: repeat }, () => mqcontent);
 </script>
 
-<div class="marquee">
-  <div class="marquee-content">
-    <span>{$$props.mqcontent}</span>
-    <span>{$$props.mqcontent}</span>
-    <span>{$$props.mqcontent}</span>
-  </div>
-  <div class="marquee-content" aria-hidden="true">
-    <span>{$$props.mqcontent}</span>
-    <span>{$$props.mqcontent}</span>
-    <span>{$$props.mqcontent}</span>
+<div class="marquee" style={`--duration: ${duration};`}>
+  <div class="marquee-track" class:reverse>
+    <div class="marquee-group">
+      {#each items as item}
+        <span>{item}</span>
+      {/each}
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      {#each items as item}
+        <span>{item}</span>
+      {/each}
+    </div>
   </div>
 </div>
 
@@ -18,26 +26,35 @@
   :root {
     --size: clamp(10rem, 1rem + 40vmin, 30rem);
     --gap: calc(var(--size) / 14);
-    --duration: 30s;
+    --duration: 24s;
   }
+
   .marquee {
     width: 100%;
     height: 100%;
+    overflow: hidden;
     white-space: nowrap;
     font-size: 5rem;
-    overflow: hidden;
-    display: flex;
     user-select: none;
+  }
+
+  .marquee-track {
+    display: inline-flex;
+    width: max-content;
+    height: 100%;
+    animation: marquee var(--duration) linear infinite;
+  }
+
+  .marquee-group {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
     gap: var(--gap);
-    .marquee-content {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      gap: var(--gap);
-      min-width: 100%;
-      animation: marquee var(--duration) linear infinite;
-    }
+    padding-right: var(--gap);
+  }
+
+  .reverse {
+    animation-direction: reverse;
   }
 
   @keyframes marquee {
@@ -45,7 +62,13 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .marquee {
+      font-size: 3rem;
     }
   }
 </style>

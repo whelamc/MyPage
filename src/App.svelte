@@ -12,7 +12,7 @@
   <Router {routes} />
 </section>
 <footer>
-  <Marquee {mqcontent} />
+  <Marquee {mqcontent} reverse={true} />
 </footer>
 
 <style lang="scss">

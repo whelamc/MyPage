@@ -112,12 +112,12 @@
       <Icon src={ImHeadphones} />
       <span class="song">{song}</span>
     </div>
-    <div class="listening-link" />
+    <div class="listening-link"></div>
     <div class="heart-rate">
       <Icon src={AiFillHeart} />
       <span>{rate}bpm</span>
     </div>
-    <div class="heart-rate-link" />
+    <div class="heart-rate-link"></div>
   </div>
 </div>
 
