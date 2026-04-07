@@ -4,7 +4,7 @@
 
 # Introduction to Personal Homepage Project
 
-This project is a personal homepage based on the minimalist and neo brutalism style, developed using the latest Vite 4.3 bundling tool and Svelte 3.57 framework, and TypeScript language.
+This project is a personal homepage based on a minimalist neo-brutalism style, built with modern Svelte + Vite + TypeScript.
 
 The goal of this personal homepage is to showcase my abilities and works, and provide more information about me for interested people. The entire website presents a simple and clear style, and the website colors and layout style is in neo brutalism, making the whole page more outstanding.
 
@@ -12,9 +12,11 @@ The goal of this personal homepage is to showcase my abilities and works, and pr
 
 Below is the main tech stack used in this project:
 
-- Vite 4.3
-- Svelte 3.57
-- TypeScript
+- Vite 8
+- Svelte 5
+- TypeScript 6
+- Sass
+- Axios
 - HTML5
 - CSS3
 
@@ -44,7 +46,21 @@ This personal homepage includes the following features:
 1. Download or clone this project to your local machine.
 2. Navigate to the project directory in the terminal and run the command `pnpm install` to install dependencies.
 3. Run `pnpm dev` to start the development server.
-4. Run `pnpm build` to build the project for deployment.
+4. Open `http://localhost:4444/` in your browser.
+5. Run `pnpm check` for Svelte/TypeScript checks.
+6. Run `pnpm build` to build the project for deployment.
+
+## Current Dev Server Settings
+
+- Port: `4444`
+- Strict port mode: enabled (`strictPort: true`)
+- API proxy: `/api -> https://mypage-api.whelam.com/`
+
+## UI Notes
+
+- Top and bottom marquees are continuous infinite horizontal loops.
+- Home page first section uses a magazine-cover inspired layout.
+- Section cards share a unified visual language for consistency.
 
 ## Conclusion
 
