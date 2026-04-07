@@ -3,11 +3,12 @@
     .href;
 </script>
 
-<div class="perfume">
-  <div class="left">
-    <div class="image"><img {src} alt="perfume-preview" /></div>
+<div class="mag-card">
+  <div class="media">
+    <img {src} alt="perfume-preview" />
   </div>
-  <div class="right">
+  <div class="content">
+    <p class="kicker">FEATURE STORY</p>
     <a href="https://perfume.whelam.com/" target="_blank">Perfume Ranking</a>
     <p>
       Discover luxury perfumes for every occasion. From niche fragrances to
@@ -17,79 +18,87 @@
 </div>
 
 <style lang="scss">
-  .perfume {
-    width: 100%;
-    height: 100%;
+  .mag-card {
+    width: calc(100% - 100px);
+    max-width: 1400px;
+    min-height: 68vh;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 3px solid #000;
+    border-right-width: 6px;
+    border-bottom-width: 6px;
+    background: #d8f8bf;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    margin: 0 auto;
-    padding: 5px;
-    min-height: 80vh;
-    .left,
-    .right {
-      width: 50%;
-      font-style: italic;
-      font-size: 1rem;
-      padding: 5px 0;
+    gap: 1.2rem;
+  }
+
+  .media,
+  .content {
+    width: 50%;
+  }
+
+  .media img {
+    display: block;
+    width: 100%;
+    border: 3px solid #000;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    background: #fff;
+  }
+
+  .kicker {
+    display: inline-block;
+    margin-bottom: 0.7rem;
+    padding: 0.18rem 0.45rem;
+    border: 2px solid #000;
+    background: #bafca2;
+    font-family: 'Lexend Mega Thin', 'Lexend Mega', Arial, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+  }
+
+  a {
+    display: inline-block;
+    font-size: 1.45rem;
+    color: #000;
+    font-weight: 700;
+    font-family: 'Lexend Mega', Arial, sans-serif;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+
+  .content p:last-child {
+    line-height: 1.6;
+    font-size: 1rem;
+    font-family: 'Lexend Mega Thin', 'Lexend Mega', Arial, sans-serif;
+  }
+
+  @media (max-width: 1400px) {
+    .mag-card {
+      width: calc(100% - 100px);
     }
-    .left {
-      .image {
-        border-radius: 5px;
-        border: 2px solid #000;
-        border-bottom: 4px solid #000;
-        border-right: 4px solid #000;
-        overflow: hidden;
-        width: 80%;
-        margin: 0 auto;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
+  }
+
+  @media (max-width: 900px) {
+    .mag-card {
+      flex-direction: column;
+      min-height: auto;
+    }
+    .media,
+    .content {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .mag-card {
+      width: calc(100% - 32px);
+      padding: 0.85rem;
     }
     a {
       font-size: 1.2rem;
-      padding: 4px 0;
-      margin-right: 8px;
-      color: #000;
-      font-style: italic;
-      padding-bottom: 1px;
-      font-weight: bold;
-      border-bottom: 1px solid#000;
-    }
-    p {
-      margin-top: 1rem;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-        sans-serif;
-      font-size: 1rem;
-    }
-  }
-  @media (max-width: 1400px) {
-    .perfume {
-      flex-direction: column;
-      width: calc(100% - 10px);
-      .left {
-        width: 100%;
-      }
-      .right {
-        width: 100%;
-      }
-    }
-  }
-  @media (max-width: 768px) {
-    .perfume {
-      flex-direction: column;
-      width: calc(100% - 10px);
-      .left {
-        width: 100%;
-      }
-      .right {
-        width: 100%;
-      }
     }
   }
 </style>

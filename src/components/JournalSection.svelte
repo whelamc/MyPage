@@ -123,16 +123,24 @@
 
 <style lang="scss">
   .journal {
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 100px);
+    max-width: 1400px;
+    min-height: 68vh;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 3px solid #000;
+    border-right-width: 6px;
+    border-bottom-width: 6px;
+    background: #d8f8bf;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
   }
   .human-body {
     position: relative;
     margin: 0 auto;
+    width: fit-content;
+    max-width: none;
     min-height: 540px;
     svg:hover {
       cursor: pointer;
@@ -235,6 +243,20 @@
       transform: rotate(155deg);
       top: 95px;
       right: 15px;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    .journal {
+      width: calc(100% - 100px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .journal {
+      width: calc(100% - 32px);
+      min-height: auto;
+      padding: 0.85rem;
     }
   }
 </style>

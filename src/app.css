@@ -80,7 +80,7 @@ table {
 /*Reset CSS*/
 
 :root {
-  font-family: Arial, sans-serif;
+  font-family: 'Lexend Mega', Arial, sans-serif;
 }
 
 body,
@@ -96,6 +96,7 @@ html {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  height: 100dvh;
 }
 
 * {

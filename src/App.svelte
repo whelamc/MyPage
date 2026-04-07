@@ -22,7 +22,10 @@
     text-transform: uppercase;
     font-family: "Lexend Mega", Arial, sans-serif;
     height: 5rem;
-    padding: 5px 0;
+    flex: 0 0 5rem;
+    padding: 0;
+    background: #90ee90;
+    overflow: hidden;
   }
   header {
     border-bottom: 4px solid #000;
@@ -32,7 +35,9 @@
   }
   section {
     flex: 1;
+    min-height: 0;
     overflow-x: hidden;
     overflow-y: auto;
+    background: #90ee90;
   }
 </style>

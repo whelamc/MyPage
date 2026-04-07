@@ -1,10 +1,14 @@
 <script lang="ts">
-      const src = new URL('@/assets/images/pika-1726654121977.png', import.meta.url)
-      .href;
+  const src = new URL('@/assets/images/pika-1726654121977.png', import.meta.url)
+    .href;
 </script>
 
-<div class="tools">
-  <div class="left">
+<div class="mag-card">
+  <div class="media">
+    <img {src} alt="planb-preview" />
+  </div>
+  <div class="content">
+    <p class="kicker">FEATURE STORY</p>
     <a href="https://webchoi.eu.org/" target="_blank">Plan B</a>
     <p>
       This project as a platform to showcase alternative solutions available on
@@ -12,86 +16,90 @@
       services, we provide a wide range of options.
     </p>
   </div>
-  <div class="right">
-    <div class="image"><img {src} alt="perfume-preview" /></div>
-  </div>
 </div>
 
 <style lang="scss">
-  .tools {
-    width: 100%;
-    height: 100%;
+  .mag-card {
+    width: calc(100% - 100px);
+    max-width: 1400px;
+    min-height: 68vh;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 3px solid #000;
+    border-right-width: 6px;
+    border-bottom-width: 6px;
+    background: #d8f8bf;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 1rem;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    min-height: 80vh;
-    .left,
-    .right {
-      width: 50%;
-      font-style: italic;
-      font-size: 1rem;
-      padding: 5px 0;
-    }
-    .right {
-      .image {
-        border-radius: 5px;
-        border: 2px solid #000;
-        border-bottom: 4px solid #000;
-        border-right: 4px solid #000;
-        overflow: hidden;
-        width: 80%;
-        margin: 0 auto;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-      }
-    }
-    a {
-      font-size: 1.2rem;
-      padding: 4px 0;
-      margin-right: 8px;
-      color: #000;
-      font-style: italic;
-      padding-bottom: 1px;
-      font-weight: bold;
-      border-bottom: 1px solid#000;
-    }
-    p {
-      margin-top: 1rem;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-        sans-serif;
-      font-size: 1rem;
-    }
+    gap: 1.2rem;
+  }
+
+  .media,
+  .content {
+    width: 50%;
+  }
+
+  .media img {
+    display: block;
+    width: 100%;
+    border: 3px solid #000;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    background: #fff;
+  }
+
+  .kicker {
+    display: inline-block;
+    margin-bottom: 0.7rem;
+    padding: 0.18rem 0.45rem;
+    border: 2px solid #000;
+    background: #bafca2;
+    font-family: 'Lexend Mega Thin', 'Lexend Mega', Arial, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+  }
+
+  a {
+    display: inline-block;
+    font-size: 1.45rem;
+    color: #000;
+    font-weight: 700;
+    font-family: 'Lexend Mega', Arial, sans-serif;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+
+  .content p:last-child {
+    line-height: 1.6;
+    font-size: 1rem;
+    font-family: 'Lexend Mega Thin', 'Lexend Mega', Arial, sans-serif;
   }
 
   @media (max-width: 1400px) {
-    .tools {
-      flex-direction: column;
-      width: calc(100% - 10px);
-      .left {
-        width: 100%;
-      }
-      .right {
-        width: 100%;
-      }
+    .mag-card {
+      width: calc(100% - 100px);
     }
   }
-  @media (max-width: 768px) {
-    .tools {
+
+  @media (max-width: 900px) {
+    .mag-card {
       flex-direction: column;
-      width: calc(100% - 10px);
-      .left {
-        width: 100%;
-      }
-      .right {
-        width: 100%;
-      }
+      min-height: auto;
+    }
+    .media,
+    .content {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .mag-card {
+      width: calc(100% - 32px);
+      padding: 0.85rem;
+    }
+    a {
+      font-size: 1.2rem;
     }
   }
 </style>
